@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <title>Document</title>
+   
+            <!-- importando bootstrap -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+                crossorigin="anonymous">
+
+            <!-- linkando nosso css -->
+            <link rel="stylesheet" href="corpo.css">
+    </head>
+
+    <body ng-app="pontos" ng-controller="PontoController">
+
+        <div class="caixa">
+                <select class="combobox">
+                    <option>Selecione...</option>
+                    <option  ng-repeat="opcao in opcoes">{{opcao.mes}}</option>
+                   
+                </select>
+        </div>
+                <div class="row">
+                    <div class="offset-sm-1 col-sm-2 celula">Entrada</div>
+                    <div class="col-sm-2 celula">Intervalo-A</div>
+                    <div class="col-sm-2 celula">Intervalo-B</div>
+                    <div class="col-sm-2 celula">Saida</div>
+                    <div class="col-sm-2 celula"> Total</div>
+                </div>
+                <div class="row" ng-repeat="ponto in pontos">
+                    <div class="offset-sm-1 col-sm-2 celula">{{ ponto.entrada }}</div>
+                    <div class="col-sm-2 celula">{{ponto.intervaloA}}</div>
+                    <div class="col-sm-2 celula">{{ponto.intervaloB}}</div>
+                    <div class="col-sm-2 celula">{{ponto.saida}}</div>
+                    <div class="col-sm-2 celula">{{ponto.total}}</div>
+                </div>
+
+        <!-- linkando angular para nosso projeto -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+            <!-- linkando nosso arquivo javascript -->
+        <script src="corpo.js"></script>
+    </body>
+
+</html>
